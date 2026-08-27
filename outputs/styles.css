@@ -1,6 +1,18 @@
 .brand img, .footer-logo img { 
-  width: 140px; 
+  width: 180px; 
   height: auto; 
-  max-height: 52px;
+  max-height: 62px;
   object-fit: contain; 
 }
+
+.site-header.is-scrolled { background: rgba(255,255,255,.97); }
+.brand img { transition: transform .25s ease, filter .25s ease; }
+.brand:hover img, .brand:focus-visible img { transform: scale(1.025); filter: drop-shadow(0 7px 12px rgba(16,198,183,.2)); }
+.main-nav { display: flex; align-items: center; gap: 2px; color: #53687d; font-size: .88rem; font-weight: 750; }
+.main-nav a { padding: 11px 13px; border-radius: 6px; transition: .18s ease; }
+.main-nav a:hover, .main-nav a:focus-visible { color: var(--navy); background: rgba(16,198,183,.1); outline: 0; }
+.main-nav a.is-active { color: var(--navy); background: rgba(16,198,183,.12); }
+.main-nav .nav-cta { margin-left: 8px; padding-inline: 18px; color: var(--white); background: var(--navy); }
+.main-nav .nav-cta:hover { color: var(--navy); background: var(--teal); }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 6px; background: var(--white); }
+.nav-toggle span { display: block; width: 19px; height: 2px; margin: 4px auto; background: var(--navy); transition: .18s ease; }
