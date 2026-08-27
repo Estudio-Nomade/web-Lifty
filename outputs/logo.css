@@ -15,7 +15,7 @@
   position: absolute;
   left: -6px;
   top: 50%;
-  width: min(88vw, 420px);
+  width: min(98vw, 780px);
   height: auto;
   max-height: none;
   object-fit: contain;
@@ -40,7 +40,7 @@
 }
 
 .footer-logo img {
-  width: min(240px, 58vw);
+  width: min(96px, 32vw);
   height: auto;
   max-height: none;
   object-fit: contain;
@@ -55,7 +55,7 @@
 
   .brand img.logo-clean,
   .brand img {
-    width: min(70vw, 560px);
+    width: min(92vw, 980px);
   }
 }
 
@@ -67,10 +67,10 @@
 
   .brand img.logo-clean,
   .brand img {
-    width: 700px;
+    width: 1200px;
   }
 
   .footer-logo img {
-    width: 280px;
+    width: 100px;
   }
 }
