@@ -11,13 +11,14 @@
     <title>Lifty | Movilidad local, segura y trazable</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="logo.css" />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="Lifty, ir al inicio">
-        <img src="assets/lifty-logo.png" alt="Lifty" />
+        <img src="assets/lifty-logo-clean.png" alt="Lifty" class="logo-clean" />
       </a>
 
       <button
@@ -35,6 +36,7 @@
         <a href="#seguridad">Seguridad</a>
         <a href="#instituciones">Instituciones</a>
         <a href="#estado">Avances</a>
+        <a href="#contacto">Contacto</a>
         <a class="nav-cta" href="#contacto">Solicitar información</a>
       </nav>
     </header>
@@ -454,65 +456,49 @@
         <div class="contact-route" aria-hidden="true"></div>
         <div class="container contact-layout">
           <div class="contact-copy reveal">
-            <p class="eyebrow light">Preinscripción</p>
-            <h2>Preinscripción a una movilidad más eficiente</h2>
+            <p class="eyebrow light">Contacto</p>
+            <h2>Hablemos</h2>
             <p>
-              Completá tus datos para registrar tu interés en formar parte del proyecto Lifty.
+              Si querés conocer más sobre Lifty, pedir una presentación o sumarte al diálogo local,
+              escribinos por email o WhatsApp. Estamos construyendo una implementación formal y
+              gradual en Villa Dolores.
             </p>
             <div class="contact-options">
-              <article><span class="line-icon check-icon"></span><div><small>Registro</small><strong>Interés verificado</strong></div></article>
-              <article><span class="line-icon people-icon"></span><div><small>Convocatorias</small><strong>Pasajeros y conductores</strong></div></article>
+              <article><span class="line-icon check-icon"></span><div><small>Proyecto</small><strong>En desarrollo</strong></div></article>
+              <article><span class="line-icon people-icon"></span><div><small>Alcance</small><strong>Pasajeros, conductores e instituciones</strong></div></article>
               <article><span class="line-icon pin-icon"></span><div><small>Operación local</small><strong>Villa Dolores y zona</strong></div></article>
             </div>
           </div>
 
-          <form class="contact-form reveal" id="preinscripcion-form" novalidate>
+          <aside class="contact-form reveal" aria-label="Canales de contacto">
             <div class="form-head">
-              <div><small>Formulario oficial</small><strong>Enviar preinscripción</strong></div>
-              <span class="form-status"><i></i> Proyecto en desarrollo</span>
+              <div><small>Canales oficiales</small><strong>Escribinos</strong></div>
+              <span class="form-status"><i></i> Respuesta directa</span>
             </div>
-            <div class="form-group form-row">
-              <label for="nombreCompleto">Nombre completo</label>
-              <input id="nombreCompleto" name="nombreCompleto" type="text" autocomplete="name" placeholder="Tu nombre completo" required />
-              <small class="error-message"></small>
+            <p>
+              Elegí el canal que te resulte más cómodo. Te compartimos novedades y material de
+              presentación del proyecto.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="mailto:admin@liftyviajes.com?subject=Consulta%20sobre%20Lifty"
+              >
+                Email · admin@liftyviajes.com
+              </a>
+              <a
+                class="button button-navy"
+                href="https://wa.me/5493544684099?text=Hola%2C%20vi%20la%20web%20de%20Lifty%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20proyecto."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
             </div>
-            <div class="form-grid">
-              <div class="form-group form-row">
-                <label for="documento">Documento</label>
-                <input id="documento" name="documento" type="text" inputmode="numeric" placeholder="DNI" required />
-                <small class="error-message"></small>
-              </div>
-              <div class="form-group form-row">
-                <label for="telefono">Número de teléfono</label>
-                <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Tu teléfono" required />
-                <small class="error-message"></small>
-              </div>
-            </div>
-            <div class="form-group form-row">
-              <label for="email">Correo electrónico</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
-              <small class="error-message"></small>
-            </div>
-            <div class="form-group form-row">
-              <label for="vehiculo">¿Usás moto o auto?</label>
-              <select id="vehiculo" name="vehiculo" required>
-                <option value="">Seleccionar</option>
-                <option value="Auto">Auto</option>
-                <option value="Moto">Moto</option>
-                <option value="Ambos">Ambos</option>
-                <option value="Todavía no definido">Todavía no definido</option>
-              </select>
-              <small class="error-message"></small>
-            </div>
-            <div class="form-group form-row">
-              <label for="mensaje">Contanos de qué zona sos y a qué zona te gustaría que llegue Lifty</label>
-              <textarea id="mensaje" name="mensaje" rows="3" placeholder="Ej: Soy de barrio Centro y me gustaría que llegue a la zona del hospital"></textarea>
-              <small class="error-message"></small>
-            </div>
-            <button class="button button-primary primary-button form-submit" type="submit">Enviar preinscripción</button>
-            <p class="privacy-note">Tus datos se utilizarán únicamente para gestionar la preinscripción al proyecto.</p>
-            <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
-          </form>
+            <p class="privacy-note">
+              Implementación sujeta a validaciones legales, municipales y operativas correspondientes.
+            </p>
+          </aside>
         </div>
       </section>
     </main>
@@ -520,7 +506,7 @@
     <footer class="site-footer">
       <div class="container footer-layout">
         <div>
-          <a class="footer-logo" href="#inicio"><img src="assets/lifty-logo.png" alt="Lifty" /></a>
+          <a class="footer-logo" href="#inicio"><img src="assets/lifty-logo-clean.png" alt="Lifty" /></a>
           <p>Movilidad que te eleva.</p>
           <small>Proyecto en desarrollo · Villa Dolores</small>
         </div>

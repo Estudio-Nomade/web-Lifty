@@ -1,0 +1,76 @@
+/* Logo overrides — keep header/nav layout intact; logo can visually protrude */
+
+.brand {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 118px;
+  height: 44px;
+  overflow: visible;
+  z-index: 5;
+}
+
+.brand img.logo-clean,
+.brand img {
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  width: min(98vw, 780px);
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  filter: drop-shadow(0 8px 20px rgba(6, 27, 58, 0.16));
+  transition: transform 0.25s ease, filter 0.25s ease;
+  pointer-events: none;
+}
+
+.brand:hover img.logo-clean,
+.brand:hover img,
+.brand:focus-visible img.logo-clean,
+.brand:focus-visible img {
+  transform: translateY(-50%) scale(1.03);
+  filter: drop-shadow(0 12px 28px rgba(16, 198, 183, 0.28));
+}
+
+.footer-logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.footer-logo img {
+  width: min(96px, 32vw);
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(6, 27, 58, 0.12));
+}
+
+@media (min-width: 768px) {
+  .brand {
+    width: 130px;
+    height: 48px;
+  }
+
+  .brand img.logo-clean,
+  .brand img {
+    width: min(92vw, 980px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand {
+    width: 140px;
+    height: 50px;
+  }
+
+  .brand img.logo-clean,
+  .brand img {
+    width: 1200px;
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+}
