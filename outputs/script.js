@@ -2,8 +2,6 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const revealItems = document.querySelectorAll(".reveal");
-const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbx2aZBy7ShAX8tZXbwEhz4jIoo2wxauFaz4JEE-nmi5I5rP0iAanq39Fu6k8vTosR8/exec";
-const form = document.querySelector("#preinscripcion-form");
 const scrollProgress = document.querySelector("[data-scroll-progress]");
 const mobileCta = document.querySelector(".mobile-cta");
 const navLinks = document.querySelectorAll('.main-nav a[href^="#"]:not(.nav-cta)');
@@ -89,70 +87,3 @@ if ("IntersectionObserver" in window) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
-
-const submitButton = form?.querySelector("button[type='submit']");
-const formMessage = document.querySelector("#form-message");
-
-function clearFieldErrors() {
-  form?.querySelectorAll(".form-row.has-error").forEach((row) => row.classList.remove("has-error"));
-  form?.querySelectorAll("[aria-invalid='true']").forEach((field) => field.setAttribute("aria-invalid", "false"));
-  form?.querySelectorAll(".error-message").forEach((error) => { error.textContent = ""; });
-}
-
-form?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(form);
-
-  const payload = new URLSearchParams();
-  payload.append("nombreCompleto", formData.get("nombreCompleto")?.trim() || "");
-  payload.append("documento", formData.get("documento")?.trim() || "");
-  payload.append("telefono", formData.get("telefono")?.trim() || "");
-  payload.append("email", formData.get("email")?.trim() || "");
-  payload.append("vehiculo", formData.get("vehiculo") || "");
-  payload.append("mensaje", formData.get("mensaje")?.trim() || "");
-  payload.append("origen", "Landing Lifty - Preinscripción");
-  payload.append("fecha", new Date().toISOString());
-
-  clearFieldErrors();
-
-  if (
-    !payload.get("nombreCompleto") ||
-    !payload.get("documento") ||
-    !payload.get("telefono") ||
-    !payload.get("email") ||
-    !payload.get("vehiculo")
-  ) {
-    formMessage.textContent = "Completá todos los campos obligatorios.";
-    formMessage.className = "form-message error";
-    return;
-  }
-
-  try {
-    submitButton.disabled = true;
-    submitButton.textContent = "Enviando...";
-    formMessage.textContent = "";
-    formMessage.className = "form-message";
-
-    await fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: payload
-    });
-
-    form.reset();
-
-    formMessage.textContent = "Preinscripción enviada correctamente. Nos pondremos en contacto.";
-    formMessage.className = "form-message success";
-
-  } catch (error) {
-    console.error("Error enviando preinscripción:", error);
-
-    formMessage.textContent = "No pudimos enviar la preinscripción. Intentá nuevamente o contactanos por WhatsApp.";
-    formMessage.className = "form-message error";
-
-  } finally {
-    submitButton.disabled = false;
-    submitButton.textContent = "Enviar preinscripción";
-  }
-});
