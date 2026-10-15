@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#061b3a" />
+    <meta
+      name="description"
+      content="Solicitá la eliminación de tu cuenta de Lifty Pasajero o Lifty Conductor. Recurso web externo conforme a la política de Google Play."
+    />
+    <link rel="canonical" href="https://web.liftyviajes.com/eliminar-cuenta" />
+    <title>Eliminar cuenta | Lifty</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="logo.css" />
+  </head>
+  <body class="legal-page-wrap">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header legal-header" data-header>
+      <div class="container">
+        <a class="brand" href="/" aria-label="Lifty, ir al inicio">
+          <img src="assets/lifty-logo-clean.png" alt="Lifty" class="logo-clean" />
+        </a>
+        <nav class="legal-header-nav" aria-label="Navegación legal">
+          <a href="/">Inicio</a>
+          <a href="/terminos">Términos</a>
+          <a href="/privacidad">Privacidad</a>
+          <a href="/eliminar-cuenta" aria-current="page">Eliminar cuenta</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="container legal-page">
+      <p class="legal-meta">Recurso web de eliminación de cuenta · Lifty Pasajero y Lifty Conductor</p>
+      <h1>Eliminar tu cuenta de Lifty</h1>
+
+      <p class="legal-notice">
+        <strong>Importante.</strong> Esta página es el
+        <strong>recurso web externo</strong> para solicitar la eliminación de tu cuenta en
+        <strong>Lifty Pasajero</strong> (<code>com.lifty.passenger</code>) o
+        <strong>Lifty Conductor</strong> (<code>com.lifty.conductor</code>), conforme a los
+        requisitos de Google Play. La desactivación o el bloqueo de la cuenta
+        <strong>no</strong> equivalen a eliminarla. Detalle completo en la
+        <a href="/privacidad#eliminacion">Política de Privacidad §14</a>.
+      </p>
+
+      <h2>Qué ocurre al eliminar la cuenta</h2>
+      <ul>
+        <li>
+          Perdés el acceso a la app con esa cuenta (pasajero o conductor, según corresponda).
+        </li>
+        <li>
+          Lifty elimina los datos personales asociados a la cuenta en la medida técnica y legal
+          posible (perfil, credenciales, tokens de notificación, métodos de pago almacenados en
+          nuestros sistemas, documentación de onboarding, etc.).
+        </li>
+        <li>
+          Podemos retener de forma limitada y restringida ciertos registros por seguridad,
+          prevención de fraude, disputas u obligaciones legales (por ejemplo contables o de
+          autoridad de transporte). Eso no implica reactivar tu perfil ni usar esos datos para
+          marketing.
+        </li>
+        <li>
+          El proceso se completa en un plazo razonable, en general dentro de
+          <strong>30 días</strong> corridos desde que verificamos tu identidad como titular de la
+          cuenta.
+        </li>
+      </ul>
+
+      <h2>Cómo solicitar la eliminación</h2>
+      <p>Elegí una de estas opciones. No hace falta tener la app instalada para usar esta página.</p>
+
+      <h3>Opción 1 — Formulario (abre tu correo)</h3>
+      <p>
+        Completá el formulario. Se abrirá tu cliente de correo con un mensaje dirigido a
+        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
+        listo para enviar. Usá el mismo email con el que te registraste en Lifty.
+      </p>
+
+      <form
+        class="delete-account-form"
+        id="delete-account-form"
+        action="mailto:admin@liftyviajes.com"
+        method="get"
+        enctype="text/plain"
+      >
+        <input type="hidden" name="subject" id="mail-subject" value="Eliminar cuenta Lifty" />
+
+        <div class="delete-field">
+          <label for="app-type">App / tipo de cuenta</label>
+          <select id="app-type" name="app" required>
+            <option value="">Seleccioná…</option>
+            <option value="Lifty Pasajero (com.lifty.passenger)">Lifty Pasajero</option>
+            <option value="Lifty Conductor (com.lifty.conductor)">Lifty Conductor</option>
+            <option value="Ambas / no estoy seguro">Ambas / no estoy seguro</option>
+          </select>
+        </div>
+
+        <div class="delete-field">
+          <label for="full-name">Nombre y apellido</label>
+          <input id="full-name" name="nombre" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="delete-field">
+          <label for="account-email">Email de la cuenta Lifty</label>
+          <input
+            id="account-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="el mismo con el que te registraste"
+          />
+        </div>
+
+        <div class="delete-field">
+          <label for="account-phone">Teléfono asociado (opcional)</label>
+          <input
+            id="account-phone"
+            name="telefono"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+54 9 …"
+          />
+        </div>
+
+        <div class="delete-field">
+          <label for="extra-info">Información adicional (opcional)</label>
+          <textarea
+            id="extra-info"
+            name="detalle"
+            rows="4"
+            placeholder="Por ejemplo: último viaje, ciudad, o cualquier dato que ayude a identificar la cuenta."
+          ></textarea>
+        </div>
+
+        <div class="delete-field delete-check">
+          <label>
+            <input id="confirm-delete" type="checkbox" required />
+            Confirmo que soy el titular de la cuenta y solicito su
+            <strong>eliminación definitiva</strong> y la de los datos asociados, según la
+            <a href="/privacidad#eliminacion">Política de Privacidad</a>.
+          </label>
+        </div>
+
+        <button class="button button-primary" type="submit">Enviar solicitud por email</button>
+      </form>
+
+      <p class="delete-form-note" id="form-fallback-note" hidden>
+        Si tu navegador no abre el correo, copiá el texto generado y envialo manualmente a
+        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>.
+      </p>
+      <pre class="delete-mail-preview" id="mail-preview" hidden></pre>
+
+      <h3>Opción 2 — Email directo</h3>
+      <p>
+        Escribí a
+        <a
+          href="mailto:admin@liftyviajes.com?subject=Eliminar%20cuenta%20Lifty&amp;body=Solicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20Lifty.%0A%0AApp%3A%20%5BPasajero%20%2F%20Conductor%5D%0AEmail%20de%20la%20cuenta%3A%20%0ANombre%3A%20%0ATel%C3%A9fono%20(opcional)%3A%20%0A"
+          >admin@liftyviajes.com</a
+        >
+        con el asunto <strong>Eliminar cuenta Lifty</strong> e incluí:
+      </p>
+      <ul>
+        <li>App: Pasajero y/o Conductor</li>
+        <li>Email de la cuenta</li>
+        <li>Nombre completo</li>
+        <li>Teléfono asociado (si lo tenés)</li>
+      </ul>
+
+      <h3>Opción 3 — Desde la aplicación</h3>
+      <p>
+        Cuando esté disponible en la app: <strong>Perfil / Ajustes → Eliminar cuenta</strong>.
+        Mientras tanto, usá esta página web o el email anterior. El bloqueo de la cuenta no
+        sustituye la eliminación.
+      </p>
+
+      <h2>Verificación y plazos</h2>
+      <p>
+        Podemos pedirte confirmar la solicitud (por ejemplo respondiendo un email) para verificar
+        que sos el titular. Tras la verificación, procesamos el borrado en general en hasta 30
+        días. Te confirmaremos por correo cuando esté completado o si necesitamos más información.
+      </p>
+
+      <h2>Privacidad</h2>
+      <p>
+        Los datos que envíes en esta solicitud se usan solo para gestionar la eliminación y
+        verificar la titularidad. Más información:
+        <a href="/privacidad">Política de Privacidad</a>
+        ·
+        <a href="/terminos">Términos y Condiciones</a>.
+      </p>
+
+      <div class="legal-cross">
+        <a href="/privacidad">← Política de privacidad</a>
+        <a href="/">Inicio →</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <div>
+          <a class="footer-logo" href="/"
+            ><img src="assets/lifty-logo-clean.png" alt="Lifty"
+          /></a>
+          <p>Movilidad que te eleva.</p>
+          <small>Proyecto en desarrollo · Villa Dolores</small>
+        </div>
+        <nav aria-label="Enlaces del pie">
+          <a href="/">Inicio</a>
+          <a href="/terminos">Términos y condiciones</a>
+          <a href="/privacidad">Política de privacidad</a>
+          <a href="/eliminar-cuenta">Eliminar cuenta</a>
+          <a href="mailto:admin@liftyviajes.com">Contacto</a>
+        </nav>
+        <p class="footer-legal">
+          Implementación sujeta a validaciones legales, municipales y operativas correspondientes.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.getElementById("delete-account-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var app = document.getElementById("app-type").value;
+          var name = document.getElementById("full-name").value.trim();
+          var email = document.getElementById("account-email").value.trim();
+          var phone = document.getElementById("account-phone").value.trim();
+          var extra = document.getElementById("extra-info").value.trim();
+          var confirmed = document.getElementById("confirm-delete").checked;
+
+          if (!app || !name || !email || !confirmed) {
+            return;
+          }
+
+          var subject = "Eliminar cuenta Lifty — " + app;
+          var body = [
+            "Solicito la eliminación definitiva de mi cuenta Lifty y de los datos asociados.",
+            "",
+            "App / cuenta: " + app,
+            "Nombre: " + name,
+            "Email de la cuenta: " + email,
+            "Teléfono: " + (phone || "(no indicado)"),
+            "Detalle: " + (extra || "(ninguno)"),
+            "",
+            "Confirmo que soy el titular de la cuenta.",
+            "Página de origen: https://web.liftyviajes.com/eliminar-cuenta",
+          ].join("\n");
+
+          var mailto =
+            "mailto:admin@liftyviajes.com" +
+            "?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+
+          var preview = document.getElementById("mail-preview");
+          var note = document.getElementById("form-fallback-note");
+          if (preview && note) {
+            preview.hidden = false;
+            note.hidden = false;
+            preview.textContent =
+              "Para: admin@liftyviajes.com\nAsunto: " + subject + "\n\n" + body;
+          }
+
+          window.location.href = mailto;
+        });
+      })();
+    </script>
+  </body>
+</html>
