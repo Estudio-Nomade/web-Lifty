@@ -45,10 +45,13 @@
         <a href="/privacidad#eliminacion">Política de Privacidad §14</a>.
       </p>
 
+      <div id="verify-status" class="legal-notice" hidden role="status"></div>
+
       <h2>Qué ocurre al eliminar la cuenta</h2>
       <ul>
         <li>
-          Perdés el acceso a la app con esa cuenta (pasajero o conductor, según corresponda).
+          Perdés el acceso a la app con esa cuenta (pasajero y/o conductor: la eliminación borra la
+          identidad completa).
         </li>
         <li>
           Lifty elimina los datos personales asociados a la cuenta en la medida técnica y legal
@@ -62,44 +65,32 @@
           marketing.
         </li>
         <li>
-          El proceso se completa en un plazo razonable, en general dentro de
-          <strong>30 días</strong> corridos desde que verificamos tu identidad como titular de la
-          cuenta.
+          Tras verificar tu identidad con el enlace del email, el borrado se procesa de forma
+          automática. No prometemos wipe instantáneo de backups históricos.
         </li>
       </ul>
 
       <h2>Cómo solicitar la eliminación</h2>
-      <p>Elegí una de estas opciones. No hace falta tener la app instalada para usar esta página.</p>
-
-      <h3>Opción 1 — Formulario (abre tu correo)</h3>
       <p>
-        Completá el formulario. Se abrirá tu cliente de correo con un mensaje dirigido a
-        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
-        listo para enviar. Usá el mismo email con el que te registraste en Lifty.
+        Completá el formulario con el <strong>mismo email</strong> de tu cuenta Lifty. Te enviamos
+        un enlace de un solo uso para confirmar. No hace falta tener la app instalada.
       </p>
 
-      <form
-        class="delete-account-form"
-        id="delete-account-form"
-        action="mailto:admin@liftyviajes.com"
-        method="get"
-        enctype="text/plain"
-      >
-        <input type="hidden" name="subject" id="mail-subject" value="Eliminar cuenta Lifty" />
-
+      <h3>Formulario</h3>
+      <form class="delete-account-form" id="delete-account-form" novalidate>
         <div class="delete-field">
-          <label for="app-type">App / tipo de cuenta</label>
-          <select id="app-type" name="app" required>
+          <label for="app-type">App / tipo de cuenta (orientativo)</label>
+          <select id="app-type" name="app">
             <option value="">Seleccioná…</option>
-            <option value="Lifty Pasajero (com.lifty.passenger)">Lifty Pasajero</option>
-            <option value="Lifty Conductor (com.lifty.conductor)">Lifty Conductor</option>
-            <option value="Ambas / no estoy seguro">Ambas / no estoy seguro</option>
+            <option value="passenger">Lifty Pasajero</option>
+            <option value="driver">Lifty Conductor</option>
+            <option value="both">Ambas / no estoy seguro</option>
           </select>
         </div>
 
         <div class="delete-field">
           <label for="full-name">Nombre y apellido</label>
-          <input id="full-name" name="nombre" type="text" autocomplete="name" required />
+          <input id="full-name" name="nombre" type="text" autocomplete="name" />
         </div>
 
         <div class="delete-field">
@@ -114,27 +105,6 @@
           />
         </div>
 
-        <div class="delete-field">
-          <label for="account-phone">Teléfono asociado (opcional)</label>
-          <input
-            id="account-phone"
-            name="telefono"
-            type="tel"
-            autocomplete="tel"
-            placeholder="+54 9 …"
-          />
-        </div>
-
-        <div class="delete-field">
-          <label for="extra-info">Información adicional (opcional)</label>
-          <textarea
-            id="extra-info"
-            name="detalle"
-            rows="4"
-            placeholder="Por ejemplo: último viaje, ciudad, o cualquier dato que ayude a identificar la cuenta."
-          ></textarea>
-        </div>
-
         <div class="delete-field delete-check">
           <label>
             <input id="confirm-delete" type="checkbox" required />
@@ -144,43 +114,31 @@
           </label>
         </div>
 
-        <button class="button button-primary" type="submit">Enviar solicitud por email</button>
+        <button class="button button-primary" type="submit" id="submit-btn">
+          Enviar solicitud
+        </button>
+        <p class="delete-form-note" id="form-status" role="status" aria-live="polite"></p>
       </form>
 
-      <p class="delete-form-note" id="form-fallback-note" hidden>
-        Si tu navegador no abre el correo, copiá el texto generado y envialo manualmente a
-        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>.
-      </p>
-      <pre class="delete-mail-preview" id="mail-preview" hidden></pre>
-
-      <h3>Opción 2 — Email directo</h3>
+      <h3>¿Problemas con el formulario?</h3>
       <p>
-        Escribí a
-        <a
-          href="mailto:admin@liftyviajes.com?subject=Eliminar%20cuenta%20Lifty&amp;body=Solicito%20la%20eliminaci%C3%B3n%20de%20mi%20cuenta%20Lifty.%0A%0AApp%3A%20%5BPasajero%20%2F%20Conductor%5D%0AEmail%20de%20la%20cuenta%3A%20%0ANombre%3A%20%0ATel%C3%A9fono%20(opcional)%3A%20%0A"
-          >admin@liftyviajes.com</a
-        >
-        con el asunto <strong>Eliminar cuenta Lifty</strong> e incluí:
+        Escribinos a
+        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
+        con el asunto <strong>Eliminar cuenta Lifty</strong> (fallback manual; el camino principal
+        es el formulario de arriba).
       </p>
-      <ul>
-        <li>App: Pasajero y/o Conductor</li>
-        <li>Email de la cuenta</li>
-        <li>Nombre completo</li>
-        <li>Teléfono asociado (si lo tenés)</li>
-      </ul>
 
-      <h3>Opción 3 — Desde la aplicación</h3>
+      <h3>Desde la aplicación</h3>
       <p>
-        Cuando esté disponible en la app: <strong>Perfil / Ajustes → Eliminar cuenta</strong>.
-        Mientras tanto, usá esta página web o el email anterior. El bloqueo de la cuenta no
-        sustituye la eliminación.
+        En la app: <strong>Perfil → Eliminar cuenta</strong> (reautenticación reciente). El bloqueo
+        de la cuenta no sustituye la eliminación.
       </p>
 
       <h2>Verificación y plazos</h2>
       <p>
-        Podemos pedirte confirmar la solicitud (por ejemplo respondiendo un email) para verificar
-        que sos el titular. Tras la verificación, procesamos el borrado en general en hasta 30
-        días. Te confirmaremos por correo cuando esté completado o si necesitamos más información.
+        Te llega un email con un enlace de un solo uso. Al abrirlo confirmamos la titularidad y
+        arrancamos el borrado. Te avisamos por correo cuando termine o si hace falta más
+        información.
       </p>
 
       <h2>Privacidad</h2>
@@ -222,54 +180,125 @@
 
     <script>
       (function () {
+        var API_BASE =
+          (window.LIFTY_API_BASE && String(window.LIFTY_API_BASE).replace(/\/$/, "")) ||
+          "https://api.liftyviajes.com/api";
+
         var form = document.getElementById("delete-account-form");
+        var statusEl = document.getElementById("form-status");
+        var submitBtn = document.getElementById("submit-btn");
+        var verifyBox = document.getElementById("verify-status");
+
+        function setStatus(msg, isError) {
+          if (!statusEl) return;
+          statusEl.textContent = msg || "";
+          statusEl.style.color = isError ? "#c62828" : "";
+        }
+
+        function roleHintFromApp(v) {
+          if (v === "passenger" || v === "driver" || v === "both") return v;
+          return undefined;
+        }
+
+        function params() {
+          try {
+            return new URLSearchParams(window.location.search);
+          } catch (e) {
+            return new URLSearchParams();
+          }
+        }
+
+        async function verifyToken(token) {
+          if (!verifyBox) return;
+          verifyBox.hidden = false;
+          verifyBox.textContent = "Verificando tu solicitud…";
+          try {
+            var res = await fetch(API_BASE + "/account-deletion/web/verify", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", Accept: "application/json" },
+              body: JSON.stringify({ token: token }),
+            });
+            var data = {};
+            try {
+              data = await res.json();
+            } catch (e) {}
+            if (!res.ok) {
+              var msg =
+                (data && data.error && data.error.message) ||
+                "No pudimos verificar el enlace. Pedí uno nuevo con el formulario.";
+              verifyBox.textContent = msg;
+              return;
+            }
+            verifyBox.textContent =
+              (data && data.message) ||
+              "Identidad verificada. Estamos eliminando tu cuenta. Te vamos a mandar un email al terminar.";
+            if (form) form.hidden = true;
+          } catch (err) {
+            verifyBox.textContent =
+              "Error de red al verificar. Probá de nuevo o escribinos a admin@liftyviajes.com.";
+          }
+        }
+
+        var token = params().get("token");
+        if (token && token.length >= 16) {
+          verifyToken(token);
+        }
+
         if (!form) return;
 
         form.addEventListener("submit", function (event) {
           event.preventDefault();
-
+          var email = (document.getElementById("account-email").value || "").trim();
+          var name = (document.getElementById("full-name").value || "").trim();
           var app = document.getElementById("app-type").value;
-          var name = document.getElementById("full-name").value.trim();
-          var email = document.getElementById("account-email").value.trim();
-          var phone = document.getElementById("account-phone").value.trim();
-          var extra = document.getElementById("extra-info").value.trim();
           var confirmed = document.getElementById("confirm-delete").checked;
 
-          if (!app || !name || !email || !confirmed) {
+          if (!email || !confirmed) {
+            setStatus("Completá el email y confirmá que sos el titular.", true);
             return;
           }
 
-          var subject = "Eliminar cuenta Lifty — " + app;
-          var body = [
-            "Solicito la eliminación definitiva de mi cuenta Lifty y de los datos asociados.",
-            "",
-            "App / cuenta: " + app,
-            "Nombre: " + name,
-            "Email de la cuenta: " + email,
-            "Teléfono: " + (phone || "(no indicado)"),
-            "Detalle: " + (extra || "(ninguno)"),
-            "",
-            "Confirmo que soy el titular de la cuenta.",
-            "Página de origen: https://web.liftyviajes.com/eliminar-cuenta",
-          ].join("\n");
+          submitBtn.disabled = true;
+          setStatus("Enviando…");
 
-          var mailto =
-            "mailto:admin@liftyviajes.com" +
-            "?subject=" +
-            encodeURIComponent(subject) +
-            "&body=" +
-            encodeURIComponent(body);
+          var body = { email: email };
+          var hint = roleHintFromApp(app);
+          if (hint) body.role_hint = hint;
+          if (name) body.full_name = name;
 
-          var preview = document.getElementById("mail-preview");
-          var note = document.getElementById("form-fallback-note");
-          if (preview && note) {
-            preview.hidden = false;
-            note.hidden = false;
-            preview.textContent =
-              "Para: admin@liftyviajes.com\nAsunto: " + subject + "\n\n" + body;
-          }
-
-          window.location.href = mailto;
+          fetch(API_BASE + "/account-deletion/web/request", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(body),
+          })
+            .then(function (res) {
+              return res.json().catch(function () {
+                return {};
+              }).then(function (data) {
+                return { res: res, data: data };
+              });
+            })
+            .then(function (out) {
+              if (out.res.status === 429) {
+                setStatus("Demasiados intentos. Esperá un rato e intentá de nuevo.", true);
+                return;
+              }
+              // Anti-enum: same message whether or not the account exists.
+              var msg =
+                (out.data && out.data.message) ||
+                "Si existe una cuenta asociada, enviamos un email con instrucciones.";
+              setStatus(msg, false);
+              form.reset();
+            })
+            .catch(function () {
+              setStatus(
+                "No pudimos contactar al servidor. Probá más tarde o escribinos a admin@liftyviajes.com.",
+                true,
+              );
+            })
+            .finally(function () {
+              submitBtn.disabled = false;
+            });
         });
       })();
     </script>
