@@ -32,7 +32,7 @@
     </header>
 
     <main id="contenido" class="container legal-page">
-      <p class="legal-meta">Política de Privacidad · Versión 1.1 · Actualizada 15 de octubre de 2026</p>
+      <p class="legal-meta">Política de Privacidad · Versión 1.2 · Actualizada 27 de noviembre de 2026</p>
       <h1>Política de Privacidad</h1>
 
       <p class="legal-notice">
@@ -86,6 +86,15 @@
           <strong>Nombre comercial / apps:</strong> Lifty, Lifty Pasajero, Lifty Conductor
         </li>
         <li>
+          <strong>Razón social:</strong> NOMAD STUDIO SAS
+        </li>
+        <li>
+          <strong>CUIT:</strong> 30-71970627-0
+        </li>
+        <li>
+          <strong>Domicilio legal:</strong> Carabobo 27, 3º A, CABA (C1406GLU), República Argentina
+        </li>
+        <li>
           <strong>Correo de privacidad y derechos:</strong>
           <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
         </li>
@@ -110,10 +119,10 @@
         </li>
       </ul>
       <p>
-        La entidad que figure en la ficha de Google Play / App Store de las apps Lifty es la misma
-        a la que se refiere esta política. Cuando se formalicen o actualicen razón social, CUIT y
-        domicilio legal, se publicarán en esta sección sin demora y se mantendrá coherencia con la
-        ficha de las tiendas. Hasta entonces, el canal oficial de privacidad es el correo indicado.
+        La entidad de la ficha de Google Play / App Store de las apps Lifty es
+        <strong>NOMAD STUDIO SAS</strong> (nombre comercial Lifty). Si cambian datos registrales,
+        se actualiza esta sección y se mantiene coherencia con las tiendas. Canal de privacidad:
+        <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>.
       </p>
 
       <h2 id="ambito">2. Ámbito de aplicación</h2>
@@ -551,23 +560,32 @@
         regulatorios. Cuando ya no sean necesarios, se eliminan, anonimizan o archivan con acceso
         restringido según corresponda.
       </p>
-      <p>Orientación de plazos (puede ajustarse por tipo de dato y autoridad competente):</p>
+      <p>
+        Plazos orientativos (en general; pueden extenderse por obligación legal mayor, orden de
+        autoridad o el mínimo legal aplicable si resulta mayor):
+      </p>
       <ul>
         <li>
           <strong>Cuenta activa:</strong> mientras la cuenta exista y sea necesaria para el
           servicio.
         </li>
         <li>
-          <strong>Historial de viajes y registros operativos:</strong> el tiempo razonable para
-          soporte, disputas, contabilidad y obligaciones legales.
+          <strong>Perfil, credenciales, push tokens, métodos de payout y docs KYC del usuario:</strong>
+          eliminación o scrub en el proceso de baja (objetivo ≤ <strong>30 días</strong> corridos
+          desde la verificación del pedido).
         </li>
         <li>
-          <strong>Documentación de conductor / KYC:</strong> mientras la relación y las
-          obligaciones de habilitación lo requieran; luego eliminación o archivo restringido.
+          <strong>Historial de viajes seudonimizado</strong> (tarifas, fees, timestamps, ids
+          operativos sin PII directa): hasta <strong>5 años</strong> si hace falta
+          contable/impositivo/defensa, o el mínimo legal aplicable si es mayor.
         </li>
         <li>
-          <strong>Logs técnicos:</strong> períodos más cortos, salvo investigación de seguridad o
-          fraude.
+          <strong>Documentación de conductor / KYC:</strong> mientras dure la relación y las
+          obligaciones de habilitación; luego scrub en la baja salvo retención legal.
+        </li>
+        <li>
+          <strong>Logs técnicos / diagnóstico:</strong> en general ≤ <strong>12 meses</strong>,
+          salvo investigación de seguridad o fraude en curso.
         </li>
         <li>
           <strong>Tras eliminación de cuenta:</strong> ver
@@ -587,19 +605,22 @@
       <h3>14.1 Cómo solicitarla</h3>
       <ul>
         <li>
-          <strong>Desde la web (recurso externo exigido por Google Play):</strong>
+          <strong>Desde la web:</strong>
           <a href="https://web.liftyviajes.com/eliminar-cuenta"
             >https://web.liftyviajes.com/eliminar-cuenta</a
           >
-          — formulario o instrucciones para iniciar el pedido sin necesidad de tener la app
-          instalada.
+          — formulario con verificación por email; no hace falta tener la app instalada.
         </li>
         <li>
-          <strong>Desde la app:</strong> cuando la función esté disponible en ajustes / perfil
-          (Eliminar cuenta). Mientras se implementa el flujo in-app completo, también podés pedir
-          la eliminación escribiendo a
+          <strong>Desde la app (Pasajero y Conductor):</strong> Perfil →
+          <strong>Eliminar cuenta</strong> (con reautenticación reciente).
+        </li>
+        <li>
+          <strong>Email (fallback o derechos sin baja de cuenta):</strong>
           <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
-          desde el correo registrado en la cuenta, con el asunto “Eliminar cuenta Lifty”.
+          desde el correo de la cuenta, asunto “Eliminar cuenta Lifty” o pedido de derechos
+          (acceso/rectificación/supresión parcial sin borrar la cuenta — ver
+          <a href="#derechos">sección 15</a>).
         </li>
       </ul>
 
@@ -607,29 +628,59 @@
       <p>
         Al procesar una solicitud válida de eliminación de cuenta, Lifty eliminará los datos del
         usuario asociados a esa cuenta en la medida técnicamente posible y legalmente permitida,
-        incluyendo perfil, credenciales de acceso, tokens de push, métodos de pago almacenados en
-        nuestros sistemas y datos de onboarding, sujeto a las retenciones de la sección 14.3.
+        sujeto a las retenciones de la sección 14.3, incluyendo en general:
       </p>
+      <ul>
+        <li>perfiles de pasajero/conductor y datos de onboarding;</li>
+        <li>credenciales de acceso y tokens de sesión;</li>
+        <li>tokens de push y métodos de pago/payout almacenados en nuestros sistemas;</li>
+        <li>
+          documentación de habilitación en storage cuando no haya retención legal aplicable;
+        </li>
+        <li>contenido de mensajes de chat del titular;</li>
+        <li>ubicaciones operativas ligadas al usuario (no se retiene tracking en vivo post-baja);</li>
+        <li>
+          datos de KYC / Didit almacenados por Lifty en la medida que el procesador y la retención
+          legal lo permitan.
+        </li>
+      </ul>
 
       <h3>14.3 Qué podemos retener (y por qué)</h3>
       <p>
-        Podemos conservar de forma limitada y con acceso restringido ciertos registros cuando sea
-        necesario por:
+        Podemos conservar de forma limitada y con acceso restringido ciertos registros. Plazos
+        orientativos post-baja (en general; pueden extenderse por ley u orden de autoridad):
       </p>
       <ul>
-        <li>seguridad y prevención de fraude o abuso;</li>
-        <li>disputas, reclamos o defensa legal;</li>
         <li>
-          obligaciones contables, impositivas, de transporte o de autoridad competente;
+          <strong>Historial de viajes seudonimizado</strong> (fares, fees, timestamps, ids
+          operativos sin PII directa): hasta <strong>5 años</strong> si hace falta
+          contable/impositivo/defensa, o el mínimo legal aplicable si es mayor.
         </li>
         <li>
-          historial de viajes seudonimizado o agregado que ya no identifique de forma directa al
-          titular, cuando corresponda.
+          <strong>Comprobantes de comisión / deuda platform / registros contables</strong> ligados
+          a conductor: hasta <strong>5 años</strong> (o el plazo legal/impositivo argentino
+          aplicable si resulta mayor); acceso restringido, sin marketing.
+        </li>
+        <li>
+          <strong>Disputas, fraude, seguridad, reclamos abiertos:</strong> mientras dure la disputa
+          + hasta <strong>3 años</strong> adicionales (o plazo de prescripción aplicable), lo que
+          sea mayor.
+        </li>
+        <li>
+          <strong>Logs técnicos / diagnóstico:</strong> en general ≤ <strong>12 meses</strong>,
+          salvo investigación de seguridad/fraude en curso.
+        </li>
+        <li>
+          <strong>Solicitudes de derechos / account_deletion_requests</strong> (email de contacto
+          del pedido): hasta <strong>12 meses</strong> post-completed para soporte/auditoría,
+          luego minimización.
         </li>
       </ul>
       <p>
         Estas retenciones se divulgan aquí de forma expresa. No usamos datos retenidos tras el
-        borrado de cuenta para marketing ni para reactivar el perfil eliminado.
+        borrado de cuenta para marketing ni para reactivar el perfil eliminado. Los backups de
+        infraestructura pueden tardar el ciclo del proveedor; no se promete purga instantánea de
+        réplicas.
       </p>
 
       <h3>14.4 Plazo de atención</h3>
@@ -650,6 +701,9 @@
         Para ejercerlos, escribí a
         <a href="mailto:admin@liftyviajes.com">admin@liftyviajes.com</a>
         identificándote y describiendo el pedido. Lifty responderá en los plazos legales aplicables.
+        Los pedidos de <strong>supresión parcial</strong> (sin baja de cuenta) también van a ese
+        correo; si el dato es indispensable para operar, se informa y se ofrece la baja conforme a
+        la <a href="#eliminacion">sección 14</a>.
       </p>
       <p>
         También podés acudir a la
